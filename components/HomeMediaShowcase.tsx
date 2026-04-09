@@ -30,12 +30,10 @@ export function HomeHeroShowcase() {
           {heroSlides.map((slide, index) => (
             <div
               key={slide.src}
-              className={`absolute inset-0 transition-all duration-700 ease-out ${
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
                 index === activeHeroIndex
-                  ? 'translate-x-0 opacity-100'
-                  : index < activeHeroIndex
-                    ? '-translate-x-full opacity-0'
-                    : 'translate-x-full opacity-0'
+                  ? 'opacity-100 z-10'
+                  : 'opacity-0 z-0'
               }`}
               aria-hidden={index !== activeHeroIndex}
             >
